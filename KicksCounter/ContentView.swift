@@ -8,6 +8,11 @@ struct Kick {
     }
 }
 
+struct AppState {
+    var selectedTab: Int
+    var kicks: [Kick] = []
+}
+
 struct ContentView: View {
     @State private var selection = 0
  
