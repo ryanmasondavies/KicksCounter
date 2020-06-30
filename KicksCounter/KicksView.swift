@@ -1,5 +1,13 @@
 import SwiftUI
 
+let shortDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    formatter.timeStyle = .none
+    formatter.locale = Locale(identifier: "en_GB")
+    return formatter
+}()
+
 struct KicksView: View {
     @Binding var appState: AppState
 
@@ -7,9 +15,14 @@ struct KicksView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .center, spacing: 32) {
-                    Text("Kicks Today")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("Kicks Today")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+
+                        Text("\(shortDateFormatter.string(from: Date()))")
+                            .font(.body)
+                    }
 
                     VStack(alignment: .center, spacing: 32) {
                         ZStack {
