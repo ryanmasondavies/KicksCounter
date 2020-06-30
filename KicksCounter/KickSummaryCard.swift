@@ -1,55 +1,72 @@
 import SwiftUI
 
-enum SummaryTimeframe: CaseIterable, CustomStringConvertible {
-    case earlyMorningToMorning
-    case morningToNoon
-    case noonToAfternoon
-    case afternoonToEvening
-    case eveningToMidnight
-    case midnightToEarlyMorning
+enum Timeframe: CaseIterable, CustomStringConvertible {
+    case morning
+    case midMorning
+    case afternoon
+    case earlyEvening
+    case evening
+    case lateEvening
 
     var description: String {
         switch self {
-        case .earlyMorningToMorning:
+        case .morning:
             return "4am - 8am"
-        case .morningToNoon:
+        case .midMorning:
             return "8am - 12pm"
-        case .noonToAfternoon:
+        case .afternoon:
             return "12pm - 4pm"
-        case .afternoonToEvening:
+        case .earlyEvening:
             return "4pm - 8pm"
-        case .eveningToMidnight:
+        case .evening:
             return "8pm - 12am"
-        case .midnightToEarlyMorning:
+        case .lateEvening:
             return "12am - 4am"
         }
     }
 }
 
-func imageSystemName(for timeframe: SummaryTimeframe) -> String {
+func imageSystemName(for timeframe: Timeframe) -> String {
     switch timeframe {
-    case .earlyMorningToMorning:
+    case .morning:
         return "sunrise.fill"
-    case .morningToNoon:
+    case .midMorning:
         return "sun.min.fill"
-    case .noonToAfternoon:
+    case .afternoon:
         return "sun.max.fill"
-    case .afternoonToEvening:
+    case .earlyEvening:
         return "sun.haze.fill"
-    case .eveningToMidnight:
+    case .evening:
         return "moon.zzz.fill"
-    case .midnightToEarlyMorning:
+    case .lateEvening:
         return "moon.stars.fill"
     }
 }
 
+func colorName(for timeframe: Timeframe) -> String {
+    switch timeframe {
+    case .morning:
+        return "Morning"
+    case .midMorning:
+        return "MidMorning"
+    case .afternoon:
+        return "Afternoon"
+    case .earlyEvening:
+        return "EarlyEvening"
+    case .evening:
+        return "Evening"
+    case .lateEvening:
+        return "LateEvening"
+    }
+}
+
 struct KickSummaryCard: View {
-    let timeframe: SummaryTimeframe
+    let timeframe: Timeframe
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 24)
-                .foregroundColor(.accentColor)
+                .foregroundColor(Color(colorName(for: timeframe)))
 
             HStack(alignment: .center, spacing: 24) {
                 Image(systemName: imageSystemName(for: timeframe))
@@ -82,6 +99,6 @@ struct KickSummaryCard: View {
 
 struct KickSummaryCard_Previews: PreviewProvider {
     static var previews: some View {
-        KickSummaryCard(timeframe: .earlyMorningToMorning)
+        KickSummaryCard(timeframe: .morning)
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct KicksView: View {
     @Binding var appState: AppState
-    
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
@@ -10,7 +10,7 @@ struct KicksView: View {
                     Text("Kicks Today")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    
+
                     VStack(alignment: .center, spacing: 32) {
                         ZStack {
                             Circle()
@@ -19,7 +19,7 @@ struct KicksView: View {
                                 .font(.largeTitle)
                                 .padding(40)
                         }
-                        
+
                         ZStack {
                             Button(action: {
                                 self.appState.kicks.append(Kick())
@@ -33,9 +33,9 @@ struct KicksView: View {
                             }
                         }
                     }
-                    
+
                     VStack(alignment: .leading, spacing: 4) {
-                        ForEach(SummaryTimeframe.allCases, id: \.self) {
+                        ForEach(Timeframe.allCases, id: \.self) {
                             KickSummaryCard(timeframe: $0)
                         }
                     }
