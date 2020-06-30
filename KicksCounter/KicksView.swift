@@ -28,7 +28,7 @@ struct KicksView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: 50, alignment: .center)
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(Color("AddKick"))
                                     .font(.largeTitle)
                             }
                         }
