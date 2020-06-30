@@ -47,6 +47,6 @@ struct KicksView: View {
 
 struct KicksView_Previews: PreviewProvider {
     static var previews: some View {
-        KicksView(appState: .constant(AppState(selectedTab: 0, kicks: []))).accentColor(Color("Accent"))
+        KicksView(appState: .constant(AppState(kicks: []))).accentColor(Color("Accent"))
     }
 }

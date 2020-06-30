@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let initialAppState = AppState(selectedTab: 0, kicks: [])
+        let initialAppState = AppState(kicks: [])
         let contentView = ContentView(appState: initialAppState).accentColor(Color("Accent"))
 
         // Use a UIHostingController as window root view controller.
