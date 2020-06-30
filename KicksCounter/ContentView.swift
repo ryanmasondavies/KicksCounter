@@ -10,7 +10,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        Text("Today")
                     }
                 }
                 .tag(0)
