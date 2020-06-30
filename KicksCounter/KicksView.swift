@@ -35,6 +35,11 @@ struct KicksView: View {
 
                 Spacer()
                     .layoutPriority(0)
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(SummaryTimeframe.allCases, id: \.self) {
+                        KickSummaryCard(timeframe: $0)
+                    }
+                }
             }
         }
     }
