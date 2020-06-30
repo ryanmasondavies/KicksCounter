@@ -14,7 +14,7 @@ struct KicksView: View {
                     VStack(alignment: .center, spacing: 32) {
                         ZStack {
                             Circle()
-                                .foregroundColor(.accentColor)
+                                .foregroundColor(Color("KicksCounter"))
                             Text("\(appState.kicks.count)")
                                 .font(.largeTitle)
                                 .padding(40)
