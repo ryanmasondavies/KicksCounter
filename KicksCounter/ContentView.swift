@@ -18,8 +18,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $appState.selectedTab){
-            Text("First View")
-                .font(.title)
+            KicksView(appState: $appState)
                 .tabItem {
                     VStack {
                         Image("first")
@@ -36,5 +35,15 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct KicksView: View {
+    @Binding var appState: AppState
+
+    var body: some View {
+        VStack {
+            Text("Kicks Today")
+                .font(.title)
+            Text("\(appState.kicks.count)")
+                .font(.largeTitle)
+        }
     }
 }
