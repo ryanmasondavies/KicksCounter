@@ -14,6 +14,7 @@
 		94CC290824ABBE3C0044AD39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CC290724ABBE3C0044AD39 /* Preview Assets.xcassets */; };
 		94CC290B24ABBE3C0044AD39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */; };
 		94CC291624ABBE3D0044AD39 /* KicksCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC291524ABBE3D0044AD39 /* KicksCounterTests.swift */; };
+		94CC292124ABC75E0044AD39 /* KicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC292024ABC75E0044AD39 /* KicksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		94CC291124ABBE3D0044AD39 /* KicksCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KicksCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC291524ABBE3D0044AD39 /* KicksCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicksCounterTests.swift; sourceTree = "<group>"; };
 		94CC291724ABBE3D0044AD39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CC292024ABC75E0044AD39 /* KicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				94CC28FE24ABBE3B0044AD39 /* AppDelegate.swift */,
 				94CC290024ABBE3B0044AD39 /* SceneDelegate.swift */,
 				94CC290224ABBE3B0044AD39 /* ContentView.swift */,
+				94CC292024ABC75E0044AD39 /* KicksView.swift */,
 				94CC290424ABBE3C0044AD39 /* Assets.xcassets */,
 				94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */,
 				94CC290C24ABBE3C0044AD39 /* Info.plist */,
@@ -210,6 +213,7 @@
 			files = (
 				94CC28FF24ABBE3B0044AD39 /* AppDelegate.swift in Sources */,
 				94CC290124ABBE3B0044AD39 /* SceneDelegate.swift in Sources */,
+				94CC292124ABC75E0044AD39 /* KicksView.swift in Sources */,
 				94CC290324ABBE3B0044AD39 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
