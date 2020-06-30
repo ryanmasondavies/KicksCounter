@@ -13,16 +13,6 @@ struct ContentView: View {
                         Text("Today")
                     }
                 }
-                .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        Text("Second")
-                    }
-                }
-                .tag(1)
         }
     }
 }
