@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let initialAppState = AppState(selectedTab: 0, kicks: [])
-        let contentView = ContentView(appState: initialAppState)
+        let contentView = ContentView(appState: initialAppState).accentColor(Color("Accent"))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
