@@ -14,10 +14,10 @@ struct AppState {
 }
 
 struct ContentView: View {
-    @State private var selection = 0
+    @State var appState: AppState
  
     var body: some View {
-        TabView(selection: $selection){
+        TabView(selection: $appState.selectedTab){
             Text("First View")
                 .font(.title)
                 .tabItem {
@@ -32,6 +32,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(appState: AppState(selectedTab: 0, kicks: [Kick(), Kick()]))
+    }
+}
+
     }
 }
