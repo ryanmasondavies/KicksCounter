@@ -50,7 +50,7 @@ struct KicksView: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     ForEach(Timeframe.allCases, id: \.self) {
-                        KickSummaryCard(timeframe: $0)
+                        KickSummaryCard(timeframe: $0, kicks: self.$appState.kicks)
                     }
                 }
             }
@@ -60,6 +60,6 @@ struct KicksView: View {
 
 struct KicksView_Previews: PreviewProvider {
     static var previews: some View {
-        KicksView(appState: .constant(AppState(kicks: []))).accentColor(Color("Accent"))
+        KicksView(appState: .constant(AppState(kicks: [])))
     }
 }

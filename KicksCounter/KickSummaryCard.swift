@@ -36,6 +36,11 @@ func colorName(for timeframe: Timeframe) -> String {
 
 struct KickSummaryCard: View {
     let timeframe: Timeframe
+    @Binding var kicks: [Kick]
+
+    var kicksWithinTimeframe: [Kick] {
+        kicks.filter(by: timeframe, using: .current)
+    }
 
     var body: some View {
         ZStack {
@@ -59,7 +64,7 @@ struct KickSummaryCard: View {
                 Spacer()
                     .layoutPriority(1)
 
-                Text("3 kicks")
+                Text("\(kicksWithinTimeframe.count) kicks")
                     .font(.headline)
                     .layoutPriority(2)
             }
@@ -73,6 +78,6 @@ struct KickSummaryCard: View {
 
 struct KickSummaryCard_Previews: PreviewProvider {
     static var previews: some View {
-        KickSummaryCard(timeframe: .morning)
+        KickSummaryCard(timeframe: .morning, kicks: .constant([]))
     }
 }
