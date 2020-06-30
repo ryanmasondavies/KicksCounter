@@ -1,5 +1,13 @@
 import SwiftUI
 
+struct Kick {
+    let date: Date
+
+    init() {
+        self.date = Date()
+    }
+}
+
 struct ContentView: View {
     @State private var selection = 0
  
