@@ -7,16 +7,35 @@ struct KicksView: View {
         NavigationView {
             VStack {
                 Text("Kicks Today")
-                    .font(.title)
-                ZStack {
-                    Circle()
-                        .foregroundColor(.accentColor)
-                    Text("\(appState.kicks.count)")
-                        .font(.largeTitle)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .layoutPriority(0)
+
+                VStack {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.accentColor)
+                        Text("\(appState.kicks.count)")
+                            .font(.largeTitle)
+                    }
+                    .padding(.all, 32)
+                    .layoutPriority(2)
+
+                    ZStack {
+                        Button(action: {
+                            self.appState.kicks.append(Kick())
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.accentColor)
+                                .font(.largeTitle)
+                        }
+                    }
                 }
-                .padding(.all, 32)
+                .layoutPriority(0)
+
+                Spacer()
+                    .layoutPriority(0)
             }
-            .navigationBarTitle("Today")
         }
     }
 }
