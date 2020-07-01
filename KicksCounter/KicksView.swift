@@ -10,6 +10,8 @@ let shortDateFormatter: DateFormatter = {
 
 struct KicksView: View {
     @Binding var appState: AppState
+    let date: Date
+    let showAdd: Bool
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -34,16 +36,18 @@ struct KicksView: View {
                             .padding(40)
                     }
 
-                    ZStack {
-                        Button(action: {
-                            self.appState.kicks.append(Kick())
-                        }) {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, alignment: .center)
-                                .foregroundColor(Color("AddKick"))
-                                .font(.largeTitle)
+                    if showAdd {
+                        ZStack {
+                            Button(action: {
+                                self.appState.kicks.append(Kick())
+                            }) {
+                                Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 50, alignment: .center)
+                                    .foregroundColor(Color("AddKick"))
+                                    .font(.largeTitle)
+                            }
                         }
                     }
                 }
@@ -60,6 +64,9 @@ struct KicksView: View {
 
 struct KicksView_Previews: PreviewProvider {
     static var previews: some View {
-        KicksView(appState: .constant(AppState(kicks: [])))
+        VStack {
+            KicksView(appState: .constant(AppState(kicks: [])), date: Date(), showAdd: true)
+            KicksView(appState: .constant(AppState(kicks: [])), date: Date(), showAdd: false)
+        }
     }
 }
