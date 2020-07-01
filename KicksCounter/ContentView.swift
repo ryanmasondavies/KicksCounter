@@ -16,7 +16,13 @@ struct ContentView: View {
     @ObservedObject var appStateStore: AppStateStore
  
     var body: some View {
-        KicksView(appState: $appStateStore.appState)
+        TabView {
+            KicksView(appState: $appStateStore.appState)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Today")
+                }
+        }
     }
 }
 
