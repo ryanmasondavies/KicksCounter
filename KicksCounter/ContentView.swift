@@ -5,7 +5,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView {
-            KicksView(appState: $appStateStore.appState, date: Date(), showAdd: true)
+            TodayView(appState: $appStateStore.appState)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Today")
