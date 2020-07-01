@@ -36,10 +36,11 @@ func colorName(for timeframe: Timeframe) -> String {
 
 struct KickSummaryCard: View {
     let timeframe: Timeframe
+    let date: Date
     @Binding var kicks: [Kick]
 
     var kicksWithinTimeframe: [Kick] {
-        kicks.filter(by: timeframe, using: .current)
+        kicks.filter(by: timeframe, on: date, using: .current)
     }
 
     var body: some View {
@@ -78,6 +79,6 @@ struct KickSummaryCard: View {
 
 struct KickSummaryCard_Previews: PreviewProvider {
     static var previews: some View {
-        KickSummaryCard(timeframe: .morning, kicks: .constant([]))
+        KickSummaryCard(timeframe: .morning, date: Date(), kicks: .constant([]))
     }
 }

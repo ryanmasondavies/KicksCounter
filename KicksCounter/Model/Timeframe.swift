@@ -44,9 +44,15 @@ enum Timeframe: CaseIterable, CustomStringConvertible {
 }
 
 extension Array where Element == Kick {
-    func filter(by timeframe: Timeframe, using calendar: Calendar) -> [Kick] {
-        filter { kick in
+    func filter(by timeframe: Timeframe, on date: Date, using calendar: Calendar) -> [Kick] {
+        filter(byDay: calendar.component(.day, from: date), using: calendar).filter { kick in
             timeframe.hours.contains(calendar.component(.hour, from: kick.date))
+        }
+    }
+
+    func filter(byDay day: Int, using calendar: Calendar) -> [Kick] {
+        filter { kick in
+            calendar.component(.day, from: kick.date) == day
         }
     }
 }

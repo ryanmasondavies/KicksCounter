@@ -13,6 +13,10 @@ struct KicksView: View {
     let date: Date
     let showAdd: Bool
 
+    private var kicks: [Kick] {
+        appState.kicks.filter(byDay: Calendar.current.component(.day, from: date), using: .current)
+    }
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center, spacing: 24) {
@@ -23,7 +27,7 @@ struct KicksView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
 
-                    Text("\(shortDateFormatter.string(from: Date()))")
+                    Text("\(shortDateFormatter.string(from: date))")
                         .font(.body)
                 }
 
@@ -31,7 +35,7 @@ struct KicksView: View {
                     ZStack {
                         Circle()
                             .foregroundColor(Color("KicksCounter"))
-                        Text("\(appState.kicks.count)")
+                        Text("\(kicks.count)")
                             .font(.largeTitle)
                             .padding(40)
                     }
@@ -54,7 +58,7 @@ struct KicksView: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     ForEach(Timeframe.allCases, id: \.self) {
-                        KickSummaryCard(timeframe: $0, kicks: self.$appState.kicks)
+                        KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
                     }
                 }
             }
