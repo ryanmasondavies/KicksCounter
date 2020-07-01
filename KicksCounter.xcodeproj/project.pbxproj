@@ -70,10 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94CC28F224ABBE3B0044AD39 = {
+		944B233F24AD2F8700480BCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				944B233D24AD2F7200480BCB /* AppState.swift */,
+				944B233924AD2DDC00480BCB /* AppStateStore.swift */,
+				944B233B24AD2F5500480BCB /* Kick.swift */,
+				9406A24124ABE3DA00127541 /* Timeframe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94CC28F224ABBE3B0044AD39 = {
+			isa = PBXGroup;
+			children = (
 				94CC28FD24ABBE3B0044AD39 /* KicksCounter */,
 				94CC291424ABBE3D0044AD39 /* KicksCounterTests */,
 				94CC28FC24ABBE3B0044AD39 /* Products */,
@@ -96,10 +106,8 @@
 				94CC290024ABBE3B0044AD39 /* SceneDelegate.swift */,
 				94CC290224ABBE3B0044AD39 /* ContentView.swift */,
 				94CC292024ABC75E0044AD39 /* KicksView.swift */,
-				944B233B24AD2F5500480BCB /* Kick.swift */,
 				9406A23F24ABCF5A00127541 /* KickSummaryCard.swift */,
-				944B233924AD2DDC00480BCB /* AppStateStore.swift */,
-				9406A24124ABE3DA00127541 /* Timeframe.swift */,
+				944B233F24AD2F8700480BCB /* Model */,
 				94CC290424ABBE3C0044AD39 /* Assets.xcassets */,
 				94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */,
 				94CC290C24ABBE3C0044AD39 /* Info.plist */,
