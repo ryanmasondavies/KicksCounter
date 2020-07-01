@@ -13,15 +13,15 @@ struct AppState {
 }
 
 struct ContentView: View {
-    @State var appState: AppState
+    @ObservedObject var appStateStore: AppStateStore
  
     var body: some View {
-        KicksView(appState: $appState)
+        KicksView(appState: $appStateStore.appState)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(appState: AppState(kicks: [Kick(), Kick()])).accentColor(Color("Accent"))
+        ContentView(appStateStore: AppStateStore()).accentColor(Color("Accent"))
     }
 }
