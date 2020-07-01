@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Kick {
+struct Kick: Codable {
     let date: Date
 
     init() {
@@ -8,7 +8,7 @@ struct Kick {
     }
 }
 
-struct AppState {
+struct AppState: Codable {
     var kicks: [Kick] = []
 }
 
