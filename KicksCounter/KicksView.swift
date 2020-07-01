@@ -15,7 +15,7 @@ struct KicksView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .center, spacing: 32) {
+            VStack(alignment: .center, spacing: 24) {
                 Spacer()
 
                 VStack(alignment: .center, spacing: 8) {
