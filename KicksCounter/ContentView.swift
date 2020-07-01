@@ -1,9 +1,5 @@
 import SwiftUI
 
-struct AppState: Codable {
-    var kicks: [Kick] = []
-}
-
 struct ContentView: View {
     @ObservedObject var appStateStore: AppStateStore
  
