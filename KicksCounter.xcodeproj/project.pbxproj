@@ -22,6 +22,7 @@
 		94CC290B24ABBE3C0044AD39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */; };
 		94CC291624ABBE3D0044AD39 /* KicksCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC291524ABBE3D0044AD39 /* KicksCounterTests.swift */; };
 		94CC292124ABC75E0044AD39 /* KicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC292024ABC75E0044AD39 /* KicksView.swift */; };
+		94FA24CC24AFB5F700AD0EFA /* DayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA24CB24AFB5F700AD0EFA /* DayCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		94CC291524ABBE3D0044AD39 /* KicksCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicksCounterTests.swift; sourceTree = "<group>"; };
 		94CC291724ABBE3D0044AD39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94CC292024ABC75E0044AD39 /* KicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicksView.swift; sourceTree = "<group>"; };
+		94FA24CB24AFB5F700AD0EFA /* DayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				94CC292024ABC75E0044AD39 /* KicksView.swift */,
 				944B234024AD301300480BCB /* HistoryView.swift */,
 				9406A23F24ABCF5A00127541 /* KickSummaryCard.swift */,
+				94FA24CB24AFB5F700AD0EFA /* DayCard.swift */,
 				944B233F24AD2F8700480BCB /* Model */,
 				94CC290424ABBE3C0044AD39 /* Assets.xcassets */,
 				94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */,
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FA24CC24AFB5F700AD0EFA /* DayCard.swift in Sources */,
 				94CC28FF24ABBE3B0044AD39 /* AppDelegate.swift in Sources */,
 				9406A24024ABCF5A00127541 /* KickSummaryCard.swift in Sources */,
 				944B233A24AD2DDC00480BCB /* AppStateStore.swift in Sources */,
