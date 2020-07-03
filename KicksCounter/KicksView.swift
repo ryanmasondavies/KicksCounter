@@ -18,48 +18,46 @@ struct KicksView: View {
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .center, spacing: 24) {
-                Spacer()
+        VStack(alignment: .center, spacing: 24) {
+            Spacer()
 
-                VStack(alignment: .center, spacing: 8) {
-                    Text("Kicks Today")
+            VStack(alignment: .center, spacing: 8) {
+                Text("Kicks Today")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+
+                Text("\(shortDateFormatter.string(from: date))")
+                    .font(.body)
+            }
+
+            VStack(alignment: .center, spacing: 32) {
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color("KicksCounter"))
+                    Text("\(kicks.count)")
                         .font(.largeTitle)
-                        .fontWeight(.bold)
-
-                    Text("\(shortDateFormatter.string(from: date))")
-                        .font(.body)
+                        .padding(40)
                 }
 
-                VStack(alignment: .center, spacing: 32) {
+                if showAdd {
                     ZStack {
-                        Circle()
-                            .foregroundColor(Color("KicksCounter"))
-                        Text("\(kicks.count)")
-                            .font(.largeTitle)
-                            .padding(40)
-                    }
-
-                    if showAdd {
-                        ZStack {
-                            Button(action: {
-                                self.appState.kicks.append(Kick())
-                            }) {
-                                Image(systemName: "plus.circle")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 50, alignment: .center)
-                                    .foregroundColor(Color("AddKick"))
-                                    .font(.largeTitle)
-                            }
+                        Button(action: {
+                            self.appState.kicks.append(Kick())
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, alignment: .center)
+                                .foregroundColor(Color("AddKick"))
+                                .font(.largeTitle)
                         }
                     }
                 }
+            }
 
-                VStack(alignment: .leading, spacing: 4) {
-                    ForEach(Timeframe.allCases, id: \.self) {
-                        KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
-                    }
+            VStack(alignment: .leading, spacing: 4) {
+                ForEach(Timeframe.allCases, id: \.self) {
+                    KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
                 }
             }
         }

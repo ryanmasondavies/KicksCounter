@@ -4,17 +4,8 @@ struct ContentView: View {
     @ObservedObject var appStateStore: AppStateStore
  
     var body: some View {
-        TabView {
+        NavigationView {
             TodayView(appState: $appStateStore.appState)
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Today")
-                }
-            HistoryView()
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("History")
-                }
         }
     }
 }
