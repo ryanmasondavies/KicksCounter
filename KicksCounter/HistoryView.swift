@@ -30,7 +30,9 @@ struct HistoryView: View {
     @State var showingDay = false
 
     private var days: [Date] {
-        distinctDays(in: appState.kicks.map(\.date)).sorted(by: >)
+        distinctDays(in: appState.kicks.map(\.date)).filter {
+            !Calendar.current.isDateInToday($0)
+        }.sorted(by: >)
     }
 
     var body: some View {
