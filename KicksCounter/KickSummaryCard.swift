@@ -58,6 +58,7 @@ struct KickSummaryCard: View {
                     .layoutPriority(1)
 
                 Text(timeframe.description)
+                    .foregroundColor(.white)
                     .font(.headline)
                     .fontWeight(.bold)
                     .layoutPriority(2)
@@ -66,6 +67,7 @@ struct KickSummaryCard: View {
                     .layoutPriority(1)
 
                 Text("\(kicksWithinTimeframe.count) kicks")
+                    .foregroundColor(.white)
                     .font(.headline)
                     .layoutPriority(2)
             }
