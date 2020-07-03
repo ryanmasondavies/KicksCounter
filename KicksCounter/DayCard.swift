@@ -1,16 +1,15 @@
 import SwiftUI
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_GB")
+    formatter.setLocalizedDateFormatFromTemplate("MMMMd")
+    return formatter
+}()
+
 struct DayCard: View {
     let date: Date
     @Binding var kicks: [Kick]
-
-    private var relativeDay: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .medium
-        formatter.doesRelativeDateFormatting = true
-        return formatter.string(from: date)
-    }
 
     private var relativeKicks: [Kick] {
         kicks.filter(byDay: Calendar.current.component(.day, from: date), using: .current)
@@ -21,19 +20,18 @@ struct DayCard: View {
             RoundedRectangle(cornerRadius: 24)
                 .foregroundColor(.accentColor)
 
-            HStack(alignment: .center, spacing: 24) {
-                Text("Day: \(relativeDay)")
+            HStack(alignment: .center) {
+                Text("\(dateFormatter.string(from: date))")
                     .foregroundColor(.white)
                     .font(.headline)
                     .layoutPriority(1)
-
+                Spacer()
                 Text("\(relativeKicks.count) kicks")
                     .foregroundColor(.white)
                     .font(.headline)
                     .layoutPriority(1)
             }
-            .padding(.horizontal, 32)
-            .scaledToFit()
+            .padding()
         }
     }
 }
