@@ -1,6 +1,6 @@
 import SwiftUI
 
-private let dateFormatter: DateFormatter = {
+let dayOfMonthFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "en_GB")
     formatter.setLocalizedDateFormatFromTemplate("MMMMd")
@@ -21,7 +21,7 @@ struct DayCard: View {
                 .foregroundColor(.accentColor)
 
             HStack(alignment: .center) {
-                Text("\(dateFormatter.string(from: date))")
+                Text("\(dayOfMonthFormatter.string(from: date))")
                     .foregroundColor(.white)
                     .font(.headline)
                     .layoutPriority(1)

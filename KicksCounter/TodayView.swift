@@ -7,6 +7,7 @@ struct TodayView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center, spacing: 24) {
+                Spacer()
                 KicksView(appState: $appState, date: Date(), showAdd: true)
                 NavigationLink(destination: HistoryView(appState: $appState), isActive: $showHistory) {
                     Text("History")

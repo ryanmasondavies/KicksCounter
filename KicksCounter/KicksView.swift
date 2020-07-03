@@ -1,13 +1,5 @@
 import SwiftUI
 
-let shortDateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .long
-    formatter.timeStyle = .none
-    formatter.locale = Locale(identifier: "en_GB")
-    return formatter
-}()
-
 struct KicksView: View {
     @Binding var appState: AppState
     let date: Date
@@ -17,18 +9,19 @@ struct KicksView: View {
         appState.kicks.filter(byDay: Calendar.current.component(.day, from: date), using: .current)
     }
 
+    private var title: String {
+        if Calendar.current.isDateInToday(date) {
+            return "Kicks Today"
+        } else {
+            return dayOfMonthFormatter.string(from: date)
+        }
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 24) {
-            Spacer()
-
-            VStack(alignment: .center, spacing: 8) {
-                Text("Kicks Today")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-
-                Text("\(shortDateFormatter.string(from: date))")
-                    .font(.body)
-            }
+            Text(title)
+                .font(.largeTitle)
+                .fontWeight(.bold)
 
             VStack(alignment: .center, spacing: 32) {
                 ZStack {
