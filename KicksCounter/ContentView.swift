@@ -6,6 +6,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TodayView(appState: $appStateStore.appState)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
         }
     }
 }
