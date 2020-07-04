@@ -14,6 +14,7 @@
 		944B233E24AD2F7200480BCB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B233D24AD2F7200480BCB /* AppState.swift */; };
 		944B234124AD301300480BCB /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B234024AD301300480BCB /* HistoryView.swift */; };
 		944B234324AD30AF00480BCB /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B234224AD30AF00480BCB /* TodayView.swift */; };
+		9456761124B0B3CF00D8C450 /* TimeframeAveragesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9456761024B0B3CF00D8C450 /* TimeframeAveragesView.swift */; };
 		94CC28FF24ABBE3B0044AD39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC28FE24ABBE3B0044AD39 /* AppDelegate.swift */; };
 		94CC290124ABBE3B0044AD39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC290024ABBE3B0044AD39 /* SceneDelegate.swift */; };
 		94CC290324ABBE3B0044AD39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC290224ABBE3B0044AD39 /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		944B233D24AD2F7200480BCB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		944B234024AD301300480BCB /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		944B234224AD30AF00480BCB /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		9456761024B0B3CF00D8C450 /* TimeframeAveragesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeAveragesView.swift; sourceTree = "<group>"; };
 		94CC28FB24ABBE3B0044AD39 /* Kicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC28FE24ABBE3B0044AD39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94CC290024ABBE3B0044AD39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				944B234024AD301300480BCB /* HistoryView.swift */,
 				9406A23F24ABCF5A00127541 /* KickSummaryCard.swift */,
 				94FA24CB24AFB5F700AD0EFA /* DayCard.swift */,
+				9456761024B0B3CF00D8C450 /* TimeframeAveragesView.swift */,
 				944B233F24AD2F8700480BCB /* Model */,
 				94CC290424ABBE3C0044AD39 /* Assets.xcassets */,
 				94CC290924ABBE3C0044AD39 /* LaunchScreen.storyboard */,
@@ -251,6 +254,7 @@
 				944B234324AD30AF00480BCB /* TodayView.swift in Sources */,
 				94CC290124ABBE3B0044AD39 /* SceneDelegate.swift in Sources */,
 				94CC292124ABC75E0044AD39 /* KicksView.swift in Sources */,
+				9456761124B0B3CF00D8C450 /* TimeframeAveragesView.swift in Sources */,
 				9406A24224ABE3DA00127541 /* Timeframe.swift in Sources */,
 				944B234124AD301300480BCB /* HistoryView.swift in Sources */,
 				94CC290324ABBE3B0044AD39 /* ContentView.swift in Sources */,

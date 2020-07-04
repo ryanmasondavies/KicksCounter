@@ -38,6 +38,39 @@ struct HistoryView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center) {
+                NavigationLink(destination: TimeframeAveragesView(appState: $appState)) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 24)
+                            .foregroundColor(.accentColor)
+                        HStack {
+                            Text("2 Day Average")
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text("10")
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                    }
+                }
+
+                NavigationLink(destination: TimeframeAveragesView(appState: $appState)) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 24)
+                            .foregroundColor(.accentColor)
+                        HStack {
+                            Text("7 Day Average")
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text("10")
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                    }
+                }
+
+                Divider()
+                    .padding()
+
                 ForEach(days, id: \.self) { date in
                     NavigationLink(destination: HistoryDayView(appState: self.$appState, date: date)) {
                         DayCard(date: date, kicks: self.$appState.kicks)
@@ -52,6 +85,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(appState: .constant(AppState()))
+        HistoryView(appState: .constant(AppState(kicks: .randomized())))
     }
 }
