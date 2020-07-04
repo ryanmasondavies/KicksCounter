@@ -43,7 +43,7 @@
 		944B233D24AD2F7200480BCB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		944B234024AD301300480BCB /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		944B234224AD30AF00480BCB /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		94CC28FB24ABBE3B0044AD39 /* KicksCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KicksCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94CC28FB24ABBE3B0044AD39 /* Kicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC28FE24ABBE3B0044AD39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94CC290024ABBE3B0044AD39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94CC290224ABBE3B0044AD39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		94CC28FC24ABBE3B0044AD39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94CC28FB24ABBE3B0044AD39 /* KicksCounter.app */,
+				94CC28FB24ABBE3B0044AD39 /* Kicks.app */,
 				94CC291124ABBE3D0044AD39 /* KicksCounterTests.xctest */,
 			);
 			name = Products;
@@ -159,7 +159,7 @@
 			);
 			name = KicksCounter;
 			productName = KicksCounter;
-			productReference = 94CC28FB24ABBE3B0044AD39 /* KicksCounter.app */;
+			productReference = 94CC28FB24ABBE3B0044AD39 /* Kicks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		94CC291024ABBE3D0044AD39 /* KicksCounterTests */ = {
@@ -416,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Kicks;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -436,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Kicks;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
