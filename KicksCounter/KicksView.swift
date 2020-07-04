@@ -9,12 +9,21 @@ struct KicksView: View {
         appState.kicks.filter(byDay: Calendar.current.component(.day, from: date), using: .current)
     }
 
+    private var isToday: Bool {
+        Calendar.current.isDateInToday(date)
+    }
+
     private var title: String {
-        if Calendar.current.isDateInToday(date) {
+        if isToday {
             return "Kicks Today"
         } else {
             return dayOfMonthFormatter.string(from: date)
         }
+    }
+
+    private var shouldShowTimeframes: Bool {
+        let anyKicksIncludeTime = !kicks.filter({ $0.includesTime }).isEmpty
+        return anyKicksIncludeTime || isToday
     }
 
     var body: some View {
@@ -23,9 +32,11 @@ struct KicksView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(Timeframe.allCases, id: \.self) {
-                    KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
+            if shouldShowTimeframes {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(Timeframe.allCases, id: \.self) {
+                        KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
+                    }
                 }
             }
 
