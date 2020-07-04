@@ -23,6 +23,12 @@ struct KicksView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
+            VStack(alignment: .leading, spacing: 4) {
+                ForEach(Timeframe.allCases, id: \.self) {
+                    KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
+                }
+            }
+
             VStack(alignment: .center, spacing: 32) {
                 ZStack {
                     Circle()
@@ -45,12 +51,6 @@ struct KicksView: View {
                                 .font(.largeTitle)
                         }
                     }
-                }
-            }
-
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(Timeframe.allCases, id: \.self) {
-                    KickSummaryCard(timeframe: $0, date: self.date, kicks: self.$appState.kicks)
                 }
             }
         }
