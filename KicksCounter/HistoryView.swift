@@ -35,6 +35,12 @@ struct HistoryView: View {
         }.sorted(by: >)
     }
 
+    private func average(ofPreviousDays days: Int) -> Int {
+        let calendar: Calendar = .current
+        let previousDays = calendar.dates(forPreviousDays: days, from: Date())
+        return Int(appState.kicks.average(for: previousDays, using: calendar))
+    }
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center) {
@@ -46,7 +52,7 @@ struct HistoryView: View {
                             Text("2 Day Average")
                                 .fontWeight(.bold)
                             Spacer()
-                            Text("10")
+                            Text("\(average(ofPreviousDays: 2))")
                         }
                         .foregroundColor(.white)
                         .padding()
@@ -61,7 +67,7 @@ struct HistoryView: View {
                             Text("7 Day Average")
                                 .fontWeight(.bold)
                             Spacer()
-                            Text("10")
+                            Text("\(average(ofPreviousDays: 7))")
                         }
                         .foregroundColor(.white)
                         .padding()

@@ -55,4 +55,28 @@ extension Array where Element == Kick {
             calendar.component(.day, from: kick.date) == day
         }
     }
+
+    private func kicks(on date: Date, using calendar: Calendar) -> [Kick] {
+        filter(byDay: calendar.component(.day, from: date), using: calendar)
+    }
+
+    func average(for dates: [Date], using calendar: Calendar) -> Double {
+        let totalKicks = dates.map { date -> Int in
+            kicks(on: date, using: calendar).count
+        }
+        return Double(totalKicks.reduce(0, +)) / Double(dates.count)
+    }
+}
+
+extension Calendar {
+    func dates(forPreviousDays days: Int, from date: Date) -> [Date] {
+        (-days..<0).compactMap { offset -> Date? in
+            self.date(from: DateComponents(
+                calendar: self,
+                year: component(.year, from: date),
+                month: component(.month, from: date),
+                day: component(.day, from: date) + offset)
+            )
+        }
+    }
 }
