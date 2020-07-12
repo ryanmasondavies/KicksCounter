@@ -44,7 +44,7 @@ struct HistoryView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center) {
-                NavigationLink(destination: TimeframeAveragesView(appState: $appState)) {
+                NavigationLink(destination: TimeframeAveragesView(appState: $appState, numberOfDays: 2)) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 24)
                             .foregroundColor(.accentColor)
@@ -59,7 +59,7 @@ struct HistoryView: View {
                     }
                 }
 
-                NavigationLink(destination: TimeframeAveragesView(appState: $appState)) {
+                NavigationLink(destination: TimeframeAveragesView(appState: $appState, numberOfDays: 7)) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 24)
                             .foregroundColor(.accentColor)

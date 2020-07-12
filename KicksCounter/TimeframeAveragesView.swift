@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TimeframeAveragesView: View {
     @Binding var appState: AppState
+    let numberOfDays: Int
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -11,11 +12,12 @@ struct TimeframeAveragesView: View {
                 }
             }
         }
+        .navigationBarTitle("\(numberOfDays) Day Average")
     }
 }
 
 struct TimeframeAveragesView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeframeAveragesView(appState: .constant(AppState(kicks: .randomized())))
+        TimeframeAveragesView(appState: .constant(AppState(kicks: .randomized())), numberOfDays: 2)
     }
 }
