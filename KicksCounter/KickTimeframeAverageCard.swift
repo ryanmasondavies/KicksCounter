@@ -6,12 +6,16 @@ struct KickTimeframeAverageCard: View {
     let numberOfDays: Int
     @Binding var kicks: [Kick]
 
-    private var averageKicksWithinTimeframe: [Kick] {
-        []
+    private var averageKicksWithinTimeframe: Int {
+        let calendar: Calendar = .current
+        let dates = calendar.dates(forPreviousDays: numberOfDays, from: date)
+        let kicksForDates = kicks.filter(by: dates, using: calendar)
+        let kicksForDatesAndTimeframe = kicksForDates.filter(by: timeframe, using: calendar)
+        return Int(Double(kicksForDatesAndTimeframe.count) / Double(numberOfDays))
     }
 
     var body: some View {
-        TimeframeCard(timeframe: timeframe, text: "\(averageKicksWithinTimeframe.count) kicks")
+        TimeframeCard(timeframe: timeframe, text: "\(averageKicksWithinTimeframe) kicks")
     }
 }
 
