@@ -25,6 +25,16 @@
 		94CC292124ABC75E0044AD39 /* KicksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC292024ABC75E0044AD39 /* KicksView.swift */; };
 		94DC9EC524BB0B2D00946DBE /* TimeframeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC9EC424BB0B2D00946DBE /* TimeframeCard.swift */; };
 		94DC9EC724BB0BA700946DBE /* KickTimeframeAverageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC9EC624BB0BA700946DBE /* KickTimeframeAverageCard.swift */; };
+		94ED334B24BB9C5C00E881DA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94ED334924BB9C5C00E881DA /* Interface.storyboard */; };
+		94ED334D24BB9C5D00E881DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ED334C24BB9C5D00E881DA /* Assets.xcassets */; };
+		94ED335424BB9C5D00E881DA /* Kicks Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 94ED335324BB9C5D00E881DA /* Kicks Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94ED335924BB9C5D00E881DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED335824BB9C5D00E881DA /* ContentView.swift */; };
+		94ED335B24BB9C5D00E881DA /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED335A24BB9C5D00E881DA /* HostingController.swift */; };
+		94ED335D24BB9C5D00E881DA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED335C24BB9C5D00E881DA /* ExtensionDelegate.swift */; };
+		94ED335F24BB9C5D00E881DA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ED335E24BB9C5D00E881DA /* ComplicationController.swift */; };
+		94ED336124BB9C5E00E881DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ED336024BB9C5E00E881DA /* Assets.xcassets */; };
+		94ED336424BB9C5E00E881DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94ED336324BB9C5E00E881DA /* Preview Assets.xcassets */; };
+		94ED336824BB9C5E00E881DA /* Kicks.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 94ED334724BB9C5C00E881DA /* Kicks.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		94FA24CC24AFB5F700AD0EFA /* DayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA24CB24AFB5F700AD0EFA /* DayCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +46,46 @@
 			remoteGlobalIDString = 94CC28FA24ABBE3B0044AD39;
 			remoteInfo = KicksCounter;
 		};
+		94ED335524BB9C5D00E881DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94CC28F324ABBE3B0044AD39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94ED335224BB9C5D00E881DA;
+			remoteInfo = "Kicks Extension";
+		};
+		94ED336624BB9C5E00E881DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94CC28F324ABBE3B0044AD39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94ED334624BB9C5C00E881DA;
+			remoteInfo = Kicks;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94ED336924BB9C5E00E881DA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				94ED336824BB9C5E00E881DA /* Kicks.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94ED336C24BB9C5E00E881DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94ED335424BB9C5D00E881DA /* Kicks Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9406A23F24ABCF5A00127541 /* KickSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickSummaryCard.swift; sourceTree = "<group>"; };
@@ -61,6 +110,18 @@
 		94CC292024ABC75E0044AD39 /* KicksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KicksView.swift; sourceTree = "<group>"; };
 		94DC9EC424BB0B2D00946DBE /* TimeframeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeCard.swift; sourceTree = "<group>"; };
 		94DC9EC624BB0BA700946DBE /* KickTimeframeAverageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickTimeframeAverageCard.swift; sourceTree = "<group>"; };
+		94ED334724BB9C5C00E881DA /* Kicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ED334A24BB9C5C00E881DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		94ED334C24BB9C5D00E881DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94ED334E24BB9C5D00E881DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94ED335324BB9C5D00E881DA /* Kicks Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Kicks Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ED335824BB9C5D00E881DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		94ED335A24BB9C5D00E881DA /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		94ED335C24BB9C5D00E881DA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		94ED335E24BB9C5D00E881DA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		94ED336024BB9C5E00E881DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94ED336324BB9C5E00E881DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		94ED336524BB9C5E00E881DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94FA24CB24AFB5F700AD0EFA /* DayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +134,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		94CC290E24ABBE3D0044AD39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94ED335024BB9C5D00E881DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,6 +166,8 @@
 			children = (
 				94CC28FD24ABBE3B0044AD39 /* KicksCounter */,
 				94CC291424ABBE3D0044AD39 /* KicksCounterTests */,
+				94ED334824BB9C5C00E881DA /* Kicks */,
+				94ED335724BB9C5D00E881DA /* Kicks Extension */,
 				94CC28FC24ABBE3B0044AD39 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +177,8 @@
 			children = (
 				94CC28FB24ABBE3B0044AD39 /* Kicks.app */,
 				94CC291124ABBE3D0044AD39 /* KicksCounterTests.xctest */,
+				94ED334724BB9C5C00E881DA /* Kicks.app */,
+				94ED335324BB9C5D00E881DA /* Kicks Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +223,38 @@
 			path = KicksCounterTests;
 			sourceTree = "<group>";
 		};
+		94ED334824BB9C5C00E881DA /* Kicks */ = {
+			isa = PBXGroup;
+			children = (
+				94ED334924BB9C5C00E881DA /* Interface.storyboard */,
+				94ED334C24BB9C5D00E881DA /* Assets.xcassets */,
+				94ED334E24BB9C5D00E881DA /* Info.plist */,
+			);
+			path = Kicks;
+			sourceTree = "<group>";
+		};
+		94ED335724BB9C5D00E881DA /* Kicks Extension */ = {
+			isa = PBXGroup;
+			children = (
+				94ED335824BB9C5D00E881DA /* ContentView.swift */,
+				94ED335A24BB9C5D00E881DA /* HostingController.swift */,
+				94ED335C24BB9C5D00E881DA /* ExtensionDelegate.swift */,
+				94ED335E24BB9C5D00E881DA /* ComplicationController.swift */,
+				94ED336024BB9C5E00E881DA /* Assets.xcassets */,
+				94ED336524BB9C5E00E881DA /* Info.plist */,
+				94ED336224BB9C5E00E881DA /* Preview Content */,
+			);
+			path = "Kicks Extension";
+			sourceTree = "<group>";
+		};
+		94ED336224BB9C5E00E881DA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				94ED336324BB9C5E00E881DA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,10 +265,12 @@
 				94CC28F724ABBE3B0044AD39 /* Sources */,
 				94CC28F824ABBE3B0044AD39 /* Frameworks */,
 				94CC28F924ABBE3B0044AD39 /* Resources */,
+				94ED336924BB9C5E00E881DA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				94ED336724BB9C5E00E881DA /* PBXTargetDependency */,
 			);
 			name = KicksCounter;
 			productName = KicksCounter;
@@ -189,6 +295,40 @@
 			productReference = 94CC291124ABBE3D0044AD39 /* KicksCounterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		94ED334624BB9C5C00E881DA /* Kicks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94ED337024BB9C5E00E881DA /* Build configuration list for PBXNativeTarget "Kicks" */;
+			buildPhases = (
+				94ED334524BB9C5C00E881DA /* Resources */,
+				94ED336C24BB9C5E00E881DA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94ED335624BB9C5D00E881DA /* PBXTargetDependency */,
+			);
+			name = Kicks;
+			productName = Kicks;
+			productReference = 94ED334724BB9C5C00E881DA /* Kicks.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		94ED335224BB9C5D00E881DA /* Kicks Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94ED336F24BB9C5E00E881DA /* Build configuration list for PBXNativeTarget "Kicks Extension" */;
+			buildPhases = (
+				94ED334F24BB9C5D00E881DA /* Sources */,
+				94ED335024BB9C5D00E881DA /* Frameworks */,
+				94ED335124BB9C5D00E881DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kicks Extension";
+			productName = "Kicks Extension";
+			productReference = 94ED335324BB9C5D00E881DA /* Kicks Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +345,12 @@
 					94CC291024ABBE3D0044AD39 = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = 94CC28FA24ABBE3B0044AD39;
+					};
+					94ED334624BB9C5C00E881DA = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					94ED335224BB9C5D00E881DA = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -223,6 +369,8 @@
 			targets = (
 				94CC28FA24ABBE3B0044AD39 /* KicksCounter */,
 				94CC291024ABBE3D0044AD39 /* KicksCounterTests */,
+				94ED334624BB9C5C00E881DA /* Kicks */,
+				94ED335224BB9C5D00E881DA /* Kicks Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +390,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94ED334524BB9C5C00E881DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94ED334D24BB9C5D00E881DA /* Assets.xcassets in Resources */,
+				94ED334B24BB9C5C00E881DA /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94ED335124BB9C5D00E881DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94ED336424BB9C5E00E881DA /* Preview Assets.xcassets in Resources */,
+				94ED336124BB9C5E00E881DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +444,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94ED334F24BB9C5D00E881DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94ED335B24BB9C5D00E881DA /* HostingController.swift in Sources */,
+				94ED335F24BB9C5D00E881DA /* ComplicationController.swift in Sources */,
+				94ED335924BB9C5D00E881DA /* ContentView.swift in Sources */,
+				94ED335D24BB9C5D00E881DA /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -285,6 +462,16 @@
 			isa = PBXTargetDependency;
 			target = 94CC28FA24ABBE3B0044AD39 /* KicksCounter */;
 			targetProxy = 94CC291224ABBE3D0044AD39 /* PBXContainerItemProxy */;
+		};
+		94ED335624BB9C5D00E881DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94ED335224BB9C5D00E881DA /* Kicks Extension */;
+			targetProxy = 94ED335524BB9C5D00E881DA /* PBXContainerItemProxy */;
+		};
+		94ED336724BB9C5E00E881DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94ED334624BB9C5C00E881DA /* Kicks */;
+			targetProxy = 94ED336624BB9C5E00E881DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -295,6 +482,14 @@
 				94CC290A24ABBE3C0044AD39 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		94ED334924BB9C5C00E881DA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94ED334A24BB9C5C00E881DA /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -498,6 +693,92 @@
 			};
 			name = Release;
 		};
+		94ED336A24BB9C5E00E881DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XFB83Z8C6;
+				IBSC_MODULE = Kicks_Extension;
+				INFOPLIST_FILE = Kicks/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		94ED336B24BB9C5E00E881DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XFB83Z8C6;
+				IBSC_MODULE = Kicks_Extension;
+				INFOPLIST_FILE = Kicks/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		94ED336D24BB9C5E00E881DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Kicks Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 9XFB83Z8C6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Kicks Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		94ED336E24BB9C5E00E881DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Kicks Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 9XFB83Z8C6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Kicks Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmasondavies.KicksCounter.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -524,6 +805,24 @@
 			buildConfigurations = (
 				94CC291E24ABBE3D0044AD39 /* Debug */,
 				94CC291F24ABBE3D0044AD39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94ED336F24BB9C5E00E881DA /* Build configuration list for PBXNativeTarget "Kicks Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94ED336D24BB9C5E00E881DA /* Debug */,
+				94ED336E24BB9C5E00E881DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94ED337024BB9C5E00E881DA /* Build configuration list for PBXNativeTarget "Kicks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94ED336A24BB9C5E00E881DA /* Debug */,
+				94ED336B24BB9C5E00E881DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
