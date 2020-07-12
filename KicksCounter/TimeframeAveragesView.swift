@@ -8,7 +8,7 @@ struct TimeframeAveragesView: View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading, spacing: 4) {
                 ForEach(Timeframe.allCases, id: \.self) {
-                    KickSummaryCard(timeframe: $0, date: Date(), kicks: self.$appState.kicks)
+                    KickTimeframeAverageCard(timeframe: $0, date: Date(), numberOfDays: self.numberOfDays, kicks: self.$appState.kicks)
                 }
             }
         }
