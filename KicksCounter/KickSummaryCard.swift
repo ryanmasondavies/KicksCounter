@@ -70,7 +70,6 @@ struct KickSummaryCard: View {
                     .layoutPriority(2)
             }
             .padding(.horizontal, 32)
-            .scaledToFit()
         }
         .padding(.horizontal, 8)
         .frame(minHeight: 64, alignment: .center)

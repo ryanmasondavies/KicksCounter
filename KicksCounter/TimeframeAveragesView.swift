@@ -4,9 +4,11 @@ struct TimeframeAveragesView: View {
     @Binding var appState: AppState
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            ForEach(Timeframe.allCases, id: \.self) {
-                KickSummaryCard(timeframe: $0, date: Date(), kicks: self.$appState.kicks)
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack(alignment: .leading, spacing: 4) {
+                ForEach(Timeframe.allCases, id: \.self) {
+                    KickSummaryCard(timeframe: $0, date: Date(), kicks: self.$appState.kicks)
+                }
             }
         }
     }
