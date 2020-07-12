@@ -43,11 +43,21 @@ enum Timeframe: CaseIterable, CustomStringConvertible {
     }
 }
 
+extension Timeframe {
+    func contains(_ date: Date, using calendar: Calendar) -> Bool {
+        hours.contains(calendar.component(.hour, from: date))
+    }
+}
+
 extension Array where Element == Kick {
-    func filter(by timeframe: Timeframe, on date: Date, using calendar: Calendar) -> [Kick] {
-        filter(byDay: calendar.component(.day, from: date), using: calendar).filter { kick in
-            timeframe.hours.contains(calendar.component(.hour, from: kick.date))
+    func filter(by timeframe: Timeframe, using calendar: Calendar) -> [Kick] {
+        filter {
+            timeframe.contains($0.date, using: calendar) && $0.includesTime
         }
+    }
+
+    func filter(by timeframe: Timeframe, on date: Date, using calendar: Calendar) -> [Kick] {
+        filter(byDay: calendar.component(.day, from: date), using: calendar).filter(by: timeframe, using: calendar)
     }
 
     func filter(byDay day: Int, using calendar: Calendar) -> [Kick] {
@@ -56,15 +66,18 @@ extension Array where Element == Kick {
         }
     }
 
-    private func kicks(on date: Date, using calendar: Calendar) -> [Kick] {
+    private func filter(by date: Date, using calendar: Calendar) -> [Kick] {
         filter(byDay: calendar.component(.day, from: date), using: calendar)
     }
 
-    func average(for dates: [Date], using calendar: Calendar) -> Double {
-        let totalKicks = dates.map { date -> Int in
-            kicks(on: date, using: calendar).count
+    func filter(by dates: [Date], using calendar: Calendar) -> [Kick] {
+        dates.flatMap { date -> [Kick] in
+            filter(by: date, using: calendar)
         }
-        return Double(totalKicks.reduce(0, +)) / Double(dates.count)
+    }
+
+    func average(for dates: [Date], using calendar: Calendar) -> Double {
+        Double(filter(by: dates, using: calendar).count) / Double(dates.count)
     }
 }
 
