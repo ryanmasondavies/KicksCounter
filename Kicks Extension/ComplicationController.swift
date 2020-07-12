@@ -1,6 +1,31 @@
 import ClockKit
+import WatchConnectivity
 
-class ComplicationController: NSObject, CLKComplicationDataSource {
+struct SummarizedAppState {
+    let kicksCount: Int
+}
+
+class ComplicationController: NSObject, CLKComplicationDataSource, WCSessionDelegate {
+    private var appState: SummarizedAppState?
+
+    override init() {
+        super.init()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
+    }
+
+    // MARK: - WCSessionDelegate
+
+    func session(_ session: WCSession, didFinish userInfoTransfer: WCSessionUserInfoTransfer, error: Error?) {
+        guard let count = userInfoTransfer.userInfo["kicksCount"] as? Int else {
+            return
+        }
+        appState = SummarizedAppState(kicksCount: count)
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        debugPrint("Session activated: \(activationState), error: \(String(describing: error))")
+    }
     
     // MARK: - Timeline Configuration
     
@@ -23,53 +48,59 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
+        let text: String
+        if let count = appState?.kicksCount {
+            text = "\(count)"
+        } else {
+            text = "--"
+        }
         guard let template: CLKComplicationTemplate = {
             switch(complication.family) {
             case .modularSmall:
                 let template = CLKComplicationTemplateModularSmallSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .modularLarge:
                 let template = CLKComplicationTemplateModularLargeStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: "10")
+                template.headerTextProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .circularSmall:
                 let template = CLKComplicationTemplateCircularSmallSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .utilitarianSmall:
                 let template = CLKComplicationTemplateUtilitarianSmallFlat()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .utilitarianSmallFlat:
                 let template = CLKComplicationTemplateUtilitarianSmallFlat()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .utilitarianLarge:
                 let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .extraLarge:
                 let template = CLKComplicationTemplateExtraLargeSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .graphicBezel:
                 let template = CLKComplicationTemplateGraphicBezelCircularText()
-                template.textProvider = CLKSimpleTextProvider(text: "10")
+                template.textProvider = CLKSimpleTextProvider(text: text)
                 return template
             case .graphicCorner:
                 let template = CLKComplicationTemplateGraphicCornerStackText()
-                template.innerTextProvider = CLKSimpleTextProvider(text: "10")
+                template.innerTextProvider = CLKSimpleTextProvider(text: text)
                 template.outerTextProvider = CLKSimpleTextProvider(text: "")
                 return template
             case .graphicCircular:
                 let template = CLKComplicationTemplateGraphicCircularClosedGaugeText()
-                template.centerTextProvider = CLKSimpleTextProvider(text: "10")
+                template.centerTextProvider = CLKSimpleTextProvider(text: text)
                 template.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColor: .white, fillFraction: 1)
                 return template
             case .graphicRectangular:
                 let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-                template.headerTextProvider = CLKTextProvider(format: "10")
+                template.headerTextProvider = CLKTextProvider(format: text)
                 return template
             default:
                 return nil

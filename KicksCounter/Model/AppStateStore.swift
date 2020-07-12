@@ -1,9 +1,11 @@
 import Combine
 import Foundation
+import WatchConnectivity
 
 final class AppStateStore: ObservableObject {
     @Published var appState: AppState
     private var persistence: AnyCancellable?
+    private var transfer: AnyCancellable?
 
     init() {
         do {
@@ -22,6 +24,12 @@ final class AppStateStore: ObservableObject {
             }
             self.objectWillChange.send()
         })
+
+        transfer = $appState.sink { appState in
+            WCSession.default.transferUserInfo([
+                "kicksCount": appState.kicks.count,
+            ])
+        }
 
         importPreviousKicksIfNeeded()
     }

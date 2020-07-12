@@ -1,12 +1,27 @@
+import WatchConnectivity
 import UIKit
+
+final class WatchSessionManager: NSObject, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        debugPrint("Session activated: \(activationState), error: \(String(describing: error))")
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        debugPrint("Session became inactive.")
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        debugPrint("Session deactivated.")
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    private let watchSessionManager = WatchSessionManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        WCSession.default.delegate = watchSessionManager
+        WCSession.default.activate()
         return true
     }
 
